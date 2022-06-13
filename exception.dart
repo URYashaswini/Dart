@@ -1,17 +1,23 @@
-void misbehave() {
+void main() {
+  var d = new DepositException();
+
   try {
-    dynamic foo = true;
-    print(foo++); // Runtime error
-  } catch (e) {
-    print(' unknown error: ${e.runtimeType}.');
-    rethrow; // Allow callers to see the exception.
+    depositMoney(-200);
+  } on DepositException {
+    print(d.errorMessage());
+  } finally {
+    // Code
   }
 }
 
-void main() {
-  try {
-    misbehave();
-  } catch (e) {
-    print('unkonw error: ${e.runtimeType}.');
+class DepositException implements Exception {
+  String errorMessage() {
+    return "You cannot enter amount less than 0";
+  }
+}
+
+void depositMoney(int amount) {
+  if (amount < 0) {
+    throw new DepositException();
   }
 }

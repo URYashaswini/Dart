@@ -3,18 +3,19 @@ import 'dart:io';
 void main() {
   var callbacks = [];
   for (var i = 0; i < 5; i++) {
-    callbacks.add(() => print(i));
+    callbacks.add(i);
   }
-  callbacks.forEach((c) => c());
+  callbacks.forEach((c) => print("$c"));
   var i = 1;
   while (i < 6) {
-    stdout.write(i);
     if (i % 3 == 0) {
-      print(" ");
-      break;
+      i++;
+      continue;
     }
+    stdout.write(i);
     i++;
   }
+  print(" ");
   var list = [2, 6, 8, 3, 4];
   var j = 0;
   do {
