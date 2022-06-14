@@ -1,5 +1,6 @@
 void main() {
-  List fixedlengthlist = List.filled(5, 0); //length of the list cont be changed
+  List fixedlengthlist =
+      List.filled(5, 0); //length of the list cont be changed or List(5)
   print(fixedlengthlist);
   fixedlengthlist[0] = 6;
   fixedlengthlist.setAll(1, [1, 2, 3]);
