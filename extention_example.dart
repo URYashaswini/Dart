@@ -7,7 +7,7 @@ void main() {
   print("Sum of the list:${list.sum()}");
   print("Minumum value in the list: ${list.min()}");
   print("Minumum value in the list: ${list.max()}");
-
+// if two extensions have same name we use prefix
   print("parsing string to int :${StringOperations('12').parseInt()}");
   print("parsing string to int :${ue.StringOperations('12').parseInt()}");
 
